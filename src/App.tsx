@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+import KESLogo from './assets/KESLogo.png'
+// import viteLogo from '../vite.svg'
 import './App.css'
+// import MyListGroup from './components/MyListGroup'
+// import MenuItem from './components/MenuItem.tsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import NavigationMenu from './components/NavigationMenu.tsx';
+
+console.log("hi");
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+
+      <h3> <u>KAISER ELECTRICAL SERVICES</u> </h3><br/><br/>
+      <h1> SITE UNDER CONSTRUCTION </h1>
+
+      <p>
+        New management is handling the construction of our website. <br/>Thank you for your interest and your patience.
+      </p>
+
       <div>
         <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          <img src={KESLogo} className="logo" alt="KES logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <br/><br/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+
+      <div>
+        <p className="read-the-docs">
+          Please reach us by...<br/><br/>
+          
+             Phone: (936)933-3604<br/>
+             Email: c.kaiser@kaiserelectricalservices.com<br/>
+             Alt Email: m.reeves@kaiserelectricalservices.com<br/>
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
