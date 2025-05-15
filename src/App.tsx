@@ -32,9 +32,9 @@ function App() {
         <p className="read-the-docs">
           Please reach us by...<br/><br/>
           
-             Phone: (936)933-3604<br/>
-             Email: c.kaiser@kaiserelectricalservices.com<br/>
-             Alt Email: m.reeves@kaiserelectricalservices.com<br/>
+             Phone: <a href="tel:(936)933-3604">(936)933-3604</a><br/>
+             Email: <a href="mailto:c.kaiser@kaiserelectricalservices.com">c.kaiser@kaiserelectricalservices.com</a><br/>
+             Alt Email: <a href="mailto:m.reeves@kaiserelectricalservices.com">m.reeves@kaiserelectricalservices.com</a><br/>
         </p>
       </div>
     </>
