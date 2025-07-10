@@ -28,6 +28,22 @@
   padding: 0.75rem 1rem !important;
   border-radius: 8px;
   position: relative;
+  overflow: hidden;
+}
+
+.custom-navbar .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 71, 87, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.custom-navbar .nav-link:hover::before {
+  left: 100%;
 }
 
 .custom-navbar .nav-link:hover {
@@ -36,11 +52,8 @@
   transform: translateY(-1px);
 }
 
-.custom-navbar .nav-link.active {
-  color: var(--primary-red) !important;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  font-weight: 600;
+.custom-navbar .nav-link:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .custom-navbar .nav-link.active::after {
@@ -48,11 +61,25 @@
   position: absolute;
   bottom: -1px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleX(0);
   width: 20px;
   height: 2px;
   background: var(--primary-red);
   border-radius: 1px;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.custom-navbar .nav-link.active,
+.custom-navbar .nav-link:focus-visible {
+  color: var(--primary-red) !important;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-weight: 600;
+}
+
+.custom-navbar .nav-link.active::after,
+.custom-navbar .nav-link:focus-visible::after {
+  transform: translateX(-50%) scaleX(1);
 }
 
 .custom-navbar .dropdown-toggle {
@@ -101,6 +128,19 @@
   transition: all 0.3s ease;
   border: none;
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.call-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .call-button:hover {
@@ -108,6 +148,15 @@
   color: var(--text-inverse) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.call-button:hover::before {
+  left: 100%;
+}
+
+.call-button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Responsive design */

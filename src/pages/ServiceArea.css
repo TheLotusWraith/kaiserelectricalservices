@@ -17,6 +17,7 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 0 0 16px var(--accent-blue), 0 2px 16px var(--primary-red);
 }
 
 .service-area-hero .subtitle {
@@ -46,6 +47,7 @@
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--primary-red);
   padding-bottom: 0.5rem;
+  text-shadow: 0 0 16px var(--accent-blue), 0 2px 16px var(--primary-red);
 }
 
 .service-area-section p {
@@ -71,7 +73,7 @@
 
 .area-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--shadow-medium);
+  box-shadow: 0 0 24px var(--accent-blue), 0 6px 12px var(--shadow-medium);
 }
 
 .area-item h3 {
@@ -104,6 +106,7 @@
 
 .county:hover {
   transform: translateY(-2px);
+  box-shadow: 0 0 24px var(--accent-blue), 0 4px 8px var(--shadow-medium);
 }
 
 .county h4 {

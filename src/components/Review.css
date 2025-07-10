@@ -5,7 +5,11 @@
   padding: 2rem;
   transition: all 0.4s ease;
   backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 24px 0 rgba(255,71,87,0.08), var(--shadow-sm);
+  border-image: linear-gradient(90deg, var(--primary-red), var(--accent-blue), var(--primary-red)) 1;
+  border-width: 2px;
+  border-style: solid;
+  animation: borderGlow 3s linear infinite;
   position: relative;
   overflow: hidden;
 }
@@ -30,6 +34,12 @@
 
 .review-card:hover::before {
   opacity: 1;
+}
+
+@keyframes borderGlow {
+  0% { border-image-source: linear-gradient(90deg, var(--primary-red), var(--accent-blue), var(--primary-red)); }
+  50% { border-image-source: linear-gradient(90deg, var(--accent-blue), var(--primary-red), var(--accent-blue)); }
+  100% { border-image-source: linear-gradient(90deg, var(--primary-red), var(--accent-blue), var(--primary-red)); }
 }
 
 .review-header {

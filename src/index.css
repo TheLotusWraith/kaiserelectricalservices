@@ -1,5 +1,6 @@
 /* Import the color scheme */
 @import './styles/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 /* Base styles */
 * {
@@ -8,7 +9,7 @@
 
 body {
   margin: 0;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   background: var(--bg-primary);
@@ -30,10 +31,11 @@ a:hover {
   color: var(--primary-red-light);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: var(--text-primary);
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  text-shadow: 0 2px 16px rgba(255,71,87,0.08);
 }
 
 button {
@@ -58,6 +60,12 @@ button:focus,
 button:focus-visible {
   outline: 2px solid var(--primary-red);
   outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
 /* Remove the old body styles that were causing layout issues */

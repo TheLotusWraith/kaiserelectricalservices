@@ -79,6 +79,7 @@
   margin-bottom: 2rem;
   letter-spacing: -1px;
   position: relative;
+  text-shadow: 0 0 16px var(--accent-blue), 0 2px 16px var(--primary-red);
 }
 
 .services-section h2::after {
@@ -90,6 +91,7 @@
   height: 3px;
   background: var(--gradient-primary);
   border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-blue);
 }
 
 .services-section p {
@@ -130,7 +132,7 @@
 
 .service-item:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 24px var(--accent-blue), var(--shadow-lg);
   border-color: var(--border-accent);
 }
 
@@ -184,7 +186,7 @@
 
 .benefit:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 24px var(--accent-blue), var(--shadow-lg);
   border-color: var(--border-accent);
 }
 

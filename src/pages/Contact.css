@@ -213,8 +213,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-red);
-  box-shadow: 0 0 0 3px var(--focus-ring);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px var(--focus-ring), 0 0 16px var(--accent-blue);
   background: var(--bg-elevated);
 }
 
@@ -255,8 +255,8 @@
 
 .submit-button:hover {
   background: var(--gradient-primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 24px var(--accent-blue), var(--shadow-lg);
 }
 
 .emergency-section {
@@ -322,7 +322,7 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .contact-page {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   
   .contact-hero {
@@ -337,7 +337,7 @@
   
   .contact-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .contact-info-section,
