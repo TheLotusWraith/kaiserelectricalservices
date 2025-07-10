@@ -1,7 +1,6 @@
 type MenuItemProps={
     title?: string,
     link?: string
-
 }
 
 

@@ -1,0 +1,51 @@
+:root {
+  /* Modern Dark Theme Color Palette */
+  
+  /* Primary Brand Colors - Subtle Red */
+  --primary-red: #FF4757;
+  --primary-red-light: #FF6B7A;
+  --primary-red-dark: #E63946;
+  
+  /* Modern Dark Backgrounds */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1A1A1A;
+  --bg-elevated: #222222;
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+  --text-muted: #808080;
+  --text-inverse: #000000;
+  
+  /* Accent Colors */
+  --accent-blue: #4ECDC4;
+  --accent-purple: #A55EEA;
+  --accent-green: #26DE81;
+  --accent-orange: #FD79A8;
+  
+  /* Border & Divider Colors */
+  --border-primary: #2A2A2A;
+  --border-secondary: #333333;
+  --border-accent: #404040;
+  
+  /* Shadow System */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Gradient Backgrounds */
+  --gradient-primary: linear-gradient(135deg, #FF4757 0%, #FF6B7A 100%);
+  --gradient-secondary: linear-gradient(135deg, #4ECDC4 0%, #A55EEA 100%);
+  --gradient-dark: linear-gradient(135deg, #111111 0%, #1A1A1A 100%);
+  
+  /* Interactive States */
+  --hover-bg: rgba(255, 255, 255, 0.05);
+  --active-bg: rgba(255, 255, 255, 0.1);
+  --focus-ring: rgba(255, 71, 87, 0.3);
+} 
