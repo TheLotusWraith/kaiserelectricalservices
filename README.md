@@ -1,54 +1,122 @@
-# React + TypeScript + Vite
+# Kaiser Electrical Services Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for Kaiser Electrical Services built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern dark theme with coral red accents
+- Responsive design with glassmorphism effects
+- Google Reviews integration via OAuth2
+- Multiple service pages (New Construction, Residential, Commercial)
+- Contact form and service area information
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: CSS with modern design patterns
+- **Backend**: Express.js with OAuth2 authentication
+- **APIs**: Google Places API for reviews
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Google OAuth2 Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To enable Google Reviews functionality, you'll need to set up OAuth2 authentication:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. **Create a Google Cloud Project**:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project or select an existing one
+   - Enable the Places API
+
+2. **Create OAuth2 Credentials**:
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "OAuth 2.0 Client IDs"
+   - Set application type to "Web application"
+   - Add authorized redirect URIs (e.g., `http://localhost:3001/auth/google/callback`)
+   - Note down your Client ID and Client Secret
+
+3. **Get a Refresh Token**:
+   - Use the Google OAuth2 playground or implement the OAuth2 flow
+   - Exchange authorization code for refresh token
+   - Store the refresh token securely
+
+4. **Find Your Place ID**:
+   - Use [Google's Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id)
+   - Search for "Kaiser Electrical Services" and copy the Place ID
+
+### 3. Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Google OAuth2 Configuration
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+GOOGLE_REDIRECT_URI=http://localhost:3001/auth/google/callback
+GOOGLE_REFRESH_TOKEN=your_refresh_token_here
+
+# Google Places API
+GOOGLE_PLACE_ID=your_kaiser_electrical_place_id_here
+
+# Server Configuration
+PORT=3001
 ```
+
+### 4. Start Development Servers
+
+In separate terminals:
+
+```bash
+# Start the backend server
+node server.js
+
+# Start the frontend development server
+npm run dev
+```
+
+The website will be available at `http://localhost:5173` and the API at `http://localhost:3001`.
+
+## API Endpoints
+
+- `GET /api/google-reviews` - Fetch Google reviews for Kaiser Electrical Services
+- `GET /api/health` - Health check endpoint
+
+## Project Structure
+
+```
+kaiser-electrical-services/
+├── src/
+│   ├── components/          # React components
+│   ├── pages/              # Page components
+│   └── App.tsx             # Main app component
+├── server.js               # Express backend server
+├── package.json            # Dependencies and scripts
+└── README.md              # This file
+```
+
+## Deployment
+
+For production deployment:
+
+1. Set up environment variables on your hosting platform
+2. Build the frontend: `npm run build`
+3. Deploy both frontend and backend to your hosting service
+4. Update the `GOOGLE_REDIRECT_URI` to match your production domain
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is proprietary to Kaiser Electrical Services.
